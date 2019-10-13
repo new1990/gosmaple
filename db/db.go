@@ -4,7 +4,7 @@ import (
     "github.com/jinzhu/gorm"
     _ "github.com/jinzhu/gorm/dialects/postgres" // Use PostgreSQL in gorm
 
-    "entity"
+    "github.com/new1990/gosmaple/entity"
 )
 
 var (

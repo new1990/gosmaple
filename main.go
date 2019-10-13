@@ -1,7 +1,7 @@
 package main
 import (
       "github.com/gin-gonic/gin"
-      "db"
+      "github.com/new1990/gosmaple/db" 
 
 
      )
