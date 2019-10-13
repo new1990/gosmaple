@@ -1,0 +1,25 @@
+version: '2'
+services:
+  go-web:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - go-db
+    working_dir: /develop/go
+    environment:
+      - "DB_NAME=postgres"
+      - "DB_USER=postgres"
+      - "DB_PASSWORD=postgres"
+    volumes:
+      - "./:/develop/go:z"
+
+  go-db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=postgres"
+    volumes:
+      - "/data/db:/var/lib/postgresql/data:z"
